@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08070b">
+  <meta name="description" content="Official website of Zarlex Ilkali, Nigerian Afro-fusion and Afrobeats artist. Discover BIG MOTION, explore music, and get in touch for bookings.">
+  <title>Zarlex Ilkali | Official Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08070b;
+      --panel: #111016;
+      --gold: #d7b56d;
+      --gold-light: #f3dfaa;
+      --white: #f8f5ef;
+      --muted: #aaa5b0;
+      --line: rgba(215, 181, 109, 0.23);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 7, 11, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo {
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 23px;
+      font-size: 13px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+    .hero {
+      min-height: 610px;
+      padding: 100px 0;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(102, 56, 119, 0.2), transparent 42%),
+        radial-gradient(ellipse at 20% 80%, rgba(215, 181, 109, 0.09), transparent 40%),
+        var(--bg);
+    }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.08;
+    }
+    h1 {
+      max-width: 850px;
+      margin: 20px 0;
+      font-size: clamp(54px, 10vw, 105px);
+      letter-spacing: -2px;
+    }
+    h1 span {
+      display: block;
+      color: var(--gold-light);
+    }
+    .hero-description {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 32px;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 25px;
+    }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 22px;
+      border: 1px solid var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.25s;
+    }
+    .button.primary {
+      color: #09080a;
+      background: var(--gold);
+    }
+    .button:hover {
+      transform: translateY(-3px);
+      background: var(--gold-light);
+      color: #08070b;
+      border-color: var(--gold-light);
+    }
+    section {
+      padding: 90px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .section-heading {
+      color: var(--gold-light);
+      font-size: clamp(38px, 6vw, 57px);
+      margin: 12px 0 24px;
+    }
+    .section-intro {
+      color: var(--muted);
+      max-width: 700px;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 55px;
+      align-items: start;
+    }
+    .artist-mark {
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle, rgba(215, 181, 109, 0.12), transparent 60%),
+        linear-gradient(145deg, #17131d, #0b090e);
+    }
+    .artist-mark span {
+      color: var(--gold-light);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(35px, 6vw, 60px);
+      letter-spacing: 5px;
+    }
+    .bio {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .bio strong {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    .music-card {
+      margin-top: 30px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #15111a, #0c0b10);
+    }
+    .release-label {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .track-title {
+      font-size: clamp(42px, 7vw, 66px);
+      margin: 8px 0;
+      color: var(--gold-light);
+    }
+    .track-info {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .music-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 28px;
+    }
+    .music-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 17px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.02);
+      transition: 0.2s;
+    }
+    .music-link:hover {
+      border-color: var(--gold);
+      background: rgba(215, 181, 109, 0.07);
+    }
+    .music-link strong {
+      font-size: 14px;
+    }
+    .music-link span {
+      color: var(--gold);
+      font-size: 12px;
+    }
+    .platform-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+      margin-top: 28px;
+    }
+    .social-link {
+      padding: 20px;
+      border: 1px solid var(--line);
+      color: var(--gold-light);
+      transition: 0.2s;
+    }
+    .social-link:hover {
+      background: rgba(215, 181, 109, 0.08);
+      border-color: var(--gold);
+    }
+    .social-link small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .booking-box {
+      padding: clamp(25px, 5vw, 48px);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(102, 56, 119, 0.17), transparent 50%),
+        var(--panel);
+    }
+    .booking-box p {
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    .booking-details {
+      margin-top: 25px;
+      display: grid;
+      gap: 12px;
+      overflow-wrap: anywhere;
+    }
+    .booking-details a {
+      color: var(--gold-light);
+    }
+    .booking-details a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    footer span {
+      color: var(--gold);
+    }
+    @media (max-width: 650px) {
+      .nav-inner {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .nav-links {
+        gap: 15px;
+      }
+      .hero {
+        min-height: 520px;
+        padding: 75px 0;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .artist-mark {
+        min-height: 200px;
+      }
+      .music-links,
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">ZARLEX ILKALI</a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#music">Music</a>
+    <a href="#socials">Socials</a>
+    <a href="#booking">Booking</a>
+  </nav>
+</div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">Official Artist Website</p>
+    <h1>
+      ZARLEX
+      <span>ILKALI.</span>
+    </h1>
+    <p class="hero-description">
+      Nigerian Afro-fusion artist creating music inspired by ambition,
+      lifestyle, and the energy of a new generation.
+    </p>
+    <div class="buttons">
+      <a class="button primary"
+         href="https://open.spotify.com/track/4aY8AFs0v6Kz78r1Slgr9z"
+         target="_blank" rel="noopener noreferrer">
+        Listen to BIG MOTION
+      </a>
+      <a class="button" href="#about">Discover the Artist</a>
+    </div>
+  </div>
+</section>
+<section id="about">
+  <div class="container about-grid">
+    <div>
+      <p class="eyebrow">The Artist</p>
+      <h2 class="section-heading">The Story.</h2>
+      <div class="artist-mark" aria-label="Zarlex Ilkali artist name">
+        <span>Z.I. 🗿</span>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">About Zarlex Ilkali</p>
+      <h2 class="section-heading">Built for the Motion.</h2>
+      <div class="bio">
+        <p>
+          Born Precious Samuel, <strong>Zarlex Ilkali</strong> is a
+          19-year-old Nigerian Afro-fusion artist based in Lagos.
+          His sound blends contemporary Afrobeats, modern bounce,
+          and street-inspired storytelling.
+        </p>
+        <br>
+        <p>
+          His debut single, <strong>BIG MOTION</strong>, introduces
+          an artist driven by ambition, authenticity, and the hustle
+          to rise beyond his beginnings. Inspired by Lagos and a new
+          generation of African music, Zarlex is building his own
+          sound and working towards a global audience.
+        </p>
+        <br>
+        <p><strong>The journey is just beginning. The motion never stops. 🗿</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="music">
+  <div class="container">
+    <p class="eyebrow">Listen Everywhere</p>
+    <h2 class="section-heading">The Music.</h2>
+    <p class="section-intro">
+      Discover the sound of Zarlex Ilkali. Stream the debut single
+      and explore his music across platforms.
+    </p>
+    <div class="music-card">
+      <p class="release-label">Debut Single · Out Now</p>
+      <h3 class="track-title">BIG MOTION</h3>
+      <p class="track-info">Zarlex Ilkali · Released July 10, 2026</p>
+      <div class="buttons">
+        <a class="button primary"
+           href="https://open.spotify.com/track/4aY8AFs0v6Kz78r1Slgr9z"
+           target="_blank" rel="noopener noreferrer">
+          Play on Spotify
+        </a>
+        <a class="button"
+           href="https://interspacemusic.com/fm/bigmotion"
+           target="_blank" rel="noopener noreferrer">
+          All Music Links
+        </a>
+      </div>
+    </div>
+    <div class="music-links">
+      <a class="music-link"
+         href="https://open.spotify.com/track/4aY8AFs0v6Kz78r1Slgr9z"
+         target="_blank" rel="noopener noreferrer">
+        <strong>Spotify</strong><span>Listen ↗</span>
+      </a>
+      <a class="music-link"
+         href="https://music.apple.com/ng/artist/zarlex-ilkali/6786408471"
+         target="_blank" rel="noopener noreferrer">
+        <strong>Apple Music</strong><span>Listen ↗</span>
+      </a>
+      <a class="music-link"
+         href="https://audiomack.com/zarlex-ilkali"
+         target="_blank" rel="noopener noreferrer">
+        <strong>Audiomack</strong><span>Listen ↗</span>
+      </a>
+      <a class="music-link"
+         href="https://interspacemusic.com/fm/bigmotion"
+         target="_blank" rel="noopener noreferrer">
+        <strong>More Streaming Platforms</strong><span>Explore ↗</span>
+      </a>
+    </div>
+    <p class="platform-note">
+      Use the all-platform music link to find BIG MOTION on other
+      available streaming services.
+    </p>
+  </div>
+</section>
+<section id="socials">
+  <div class="container">
+    <p class="eyebrow">Stay Connected</p>
+    <h2 class="section-heading">Follow the Motion.</h2>
+    <p class="section-intro">
+      Follow Zarlex Ilkali for new music, videos, updates, and
+      behind-the-scenes moments.
+    </p>
+    <div class="social-grid">
+      <a class="social-link"
+         href="https://www.instagram.com/zarlex22/"
+         target="_blank" rel="noopener noreferrer">
+        Instagram
+        <small>@zarlex22</small>
+      </a>
+      <a class="social-link"
+         href="https://www.tiktok.com/@zarlexilkali"
+         target="_blank" rel="noopener noreferrer">
+        TikTok
+        <small>@zarlexilkali</small>
+      </a>
+      <a class="social-link"
+         href="https://youtube.com/@zarlexilkali"
+         target="_blank" rel="noopener noreferrer">
+        YouTube
+        <small>Zarlex Ilkali</small>
+      </a>
+      <a class="social-link"
+         href="https://audiomack.com/zarlex-ilkali"
+         target="_blank" rel="noopener noreferrer">
+        Audiomack
+        <small>Stream the music</small>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="booking">
+  <div class="container">
+    <div class="booking-box">
+      <p class="eyebrow">Bookings & Enquiries</p>
+      <h2 class="section-heading">Let's Work.</h2>
+      <p>
+        For bookings, collaborations, music opportunities, and
+        professional enquiries, get in touch.
+      </p>
+      <div class="booking-details">
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:Zarlexbibilkali@gmail.com">
+            Zarlexbibilkali@gmail.com
+          </a>
+        </p>
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:+2347032146708">+234 703 214 6708</a>
+        </p>
+      </div>
+      <div class="buttons">
+        <a class="button primary"
+           href="https://wa.me/2347032146708"
+           target="_blank" rel="noopener noreferrer">
+          Contact on WhatsApp
+        </a>
+        <a class="button"
+           href="mailto:Zarlexbibilkali@gmail.com">
+          Send an Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>
+        © <span id="year"></span> Zarlex Ilkali. All rights reserved.
+      </p>
+      <p>Afro-fusion · Afrobeats · Lagos, Nigeria 🗿</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
